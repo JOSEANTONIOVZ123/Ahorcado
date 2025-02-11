@@ -1,1 +1,53 @@
-<p>ahorcado works!</p>
+<div class="container-fluid text-center">
+
+<h1>Ahorcado</h1>
+
+<!-- Mostrar palabra oculta -->
+<h2>{{obtainSecretWord()}}</h2>
+
+
+<!-- TODO: Mostrar imagenes del ahorcado -->
+
+
+
+
+<!-- Mostrar letras erroneas -->
+<p>Errores: {{wrongWords.join(',')}} ({{ wrongWords.length }}/{{ maxFails }})</p>
+
+
+@if (end) {
+  <div>
+    @if (winner();) {<p>¡¡¡Felicidades Ganaste!!!</p>} @else {
+      <p>¡Lo siento, Perdiste la palabra era: <strong>{{secretWord}}</strong> Reiniciando en 5 segundos</p>
+    }
+  </div>
+}
+
+<button type="button" (click)="newGame()" class="btn btn-primary">Jugar de nuevo</button>
+
+
+<!-- Teclado -->
+
+@if (!end) {}
+<div class="">
+
+
+  <button id="o2" type="text" onkeypress="onkeydown()" class="btn btn-warning">Tocame y empieza a escribir
+  </button>
+
+  <!-- @for (word of 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split(''); track $index) {
+  <button class ="btn btn-info "
+  (click)="guess(word)"
+  [disabled]="guessedWords.includes(word) || wrongWords.includes(word)">
+
+
+  {{ word }}
+
+</button>
+  } -->
+</div>
+
+
+
+</div>
+

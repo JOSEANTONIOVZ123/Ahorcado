@@ -4,17 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AhorcadoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AhorcadoComponent,
+    CommonModule,
   ],
-  providers: [],
+
+  providers: [CommonModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
