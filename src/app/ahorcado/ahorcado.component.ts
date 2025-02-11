@@ -10,7 +10,7 @@ import { delay, timer } from 'rxjs';
 })
 export class AhorcadoComponent implements OnInit {
 
-
+  contador = 0;
   //TODO: Cambiar words para que sea en una DB o en backend
   words: string[] = ['ANGULAR', 'DESARROLLO', 'AHORCADO', 'COMPONENTE', 'TYPESCRIPT'];
 
@@ -39,6 +39,7 @@ export class AhorcadoComponent implements OnInit {
   }
 
   guess(word: string): void {
+
 
     //para evitar repetir la misma palabra
     if (this.guessedWords.includes(word) || this.wrongWords.includes(word)) {
@@ -107,5 +108,7 @@ export class AhorcadoComponent implements OnInit {
   }
 
 
+
+  imageUrl = 'Ahorcado'
 
 }
