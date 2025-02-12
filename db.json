@@ -1,15 +1,15 @@
 {
-        "words": ["ELECTRODOMESTICO",
-        "HIPOPOTOMONSTRUOSO",
-        "PARALELEPIPEDO",
-        "ANTICONSTITUCIONAL",
-        "HATSUNEMIKU",
-        "EXTERNOCLEIDOMASTOIDEO",
-        "METAMORFOSIS",
-        "INCONSTITUCIONALIDAD",
-        "SUPERCALIFRAGILISTICO",
-        "FOTOSINTESIS",
-        "PARALELEPIPEDO"]
-
-
+  "word": [
+    { "id": 1, "name": "ELECTRODOMESTICO" },
+    { "id": 2, "name": "HIPOPOTOMONSTRUOSO" },
+    { "id": 3, "name": "PARALELEPIPEDO" },
+    { "id": 4, "name": "ANTICONSTITUCIONAL" },
+    { "id": 5, "name": "HATSUNEMIKU" },
+    { "id": 6, "name": "EXTERNOCLEIDOMASTOIDEO" },
+    { "id": 7, "name": "METAMORFOSIS" },
+    { "id": 8, "name": "SUPERCALIFRAGILISTICO" },
+    { "id": 9, "name": "INCONSTITUCIONALIDAD" },
+    { "id": 10, "name": "FOTOSINTESIS" },
+    { "id": 11, "name": "PARALELEPIPEDO" }
+  ]
 }

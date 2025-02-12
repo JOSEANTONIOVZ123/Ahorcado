@@ -7,14 +7,14 @@ import { ApiService } from '../api.service';
   templateUrl: './ahorcado.component.html',
   styleUrls: ['./ahorcado.component.css']
 })
-export class AhorcadoComponent implements OnInit {
+export class AhorcadoComponent implements OnInit{
 
   contador = 0;
-  //TODO: Cambiar words para que sea en una DB o en backend
 
+
+  constructor(private apiService:ApiService){
+  }
   words: string[] = [];
-
-  constructor(private apiService:ApiService){}
 
 
   secretWord: string = '';
@@ -26,17 +26,12 @@ export class AhorcadoComponent implements OnInit {
   ngOnInit(): void {
 
     //Para poder asignar una palabra
-     this.apiService.getWords().subscribe(data => {
+      this.apiService.getWords().subscribe(data => {
        this.words = data
+       console.log(data)
+       console.log(this.words)
        this.newGame();
      });
-
-
-
-
-
-
-
   }
 
   newGame(): void {
@@ -44,7 +39,7 @@ export class AhorcadoComponent implements OnInit {
     //Elegimos una palabra aleatoria
     const randomIndex = Math.floor(Math.random() * this.words.length);
     console.log(randomIndex)
-    this.secretWord = this.words[randomIndex];
+    this.secretWord = this.words[randomIndex]
     console.log(this.secretWord)
 
     // Reseteamos variables para asegurarnos que inicia adecuadamente

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-private apiUrl = 'http://localhost:3000/words#words';
+private apiUrl = 'http://localhost:3000/word';
 
   constructor(private http: HttpClient) {}
 
@@ -14,3 +14,6 @@ private apiUrl = 'http://localhost:3000/words#words';
     return this.http.get<string[]>(this.apiUrl);
   }
 }
+
+
+
