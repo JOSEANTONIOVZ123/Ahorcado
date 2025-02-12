@@ -4,11 +4,21 @@
 
 
 #pricipal {
+  background-image:url(https://krakenbyteblog.wordpress.com/wp-content/uploads/2022/09/2e05a-kraken-piratas-horca.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 230vh;
   background-color: blue;
   height: 100vmax;
   color: white;
 
 }
 img{
-  width: 100px;
+  width: 500px;
+  border: 10px;
+  border-color: red;
+  border-radius: 2%;
+}
+
+p,h1{
+  font-family: cursive;
 }

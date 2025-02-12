@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { delay, timer } from 'rxjs';
+import { ApiService } from '../api.service';
 
 
 @Component({
@@ -12,7 +11,10 @@ export class AhorcadoComponent implements OnInit {
 
   contador = 0;
   //TODO: Cambiar words para que sea en una DB o en backend
-  words: string[] = ['ANGULAR', 'DESARROLLO', 'AHORCADO', 'COMPONENTE', 'TYPESCRIPT'];
+
+  words: string[] = [];
+
+  constructor(private apiService:ApiService){}
 
 
   secretWord: string = '';
@@ -22,13 +24,26 @@ export class AhorcadoComponent implements OnInit {
   end: boolean = false;
 
   ngOnInit(): void {
-    this.newGame();
+
+    //Para poder asignar una palabra
+     this.apiService.getWords().subscribe(data => {
+       this.words = data
+       this.newGame();
+     });
+
+
+
+
+
+
+
   }
 
   newGame(): void {
 
     //Elegimos una palabra aleatoria
     const randomIndex = Math.floor(Math.random() * this.words.length);
+    console.log(randomIndex)
     this.secretWord = this.words[randomIndex];
     console.log(this.secretWord)
 
@@ -97,13 +112,10 @@ export class AhorcadoComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    let something: any ="";
     const word = event.key.toUpperCase();
     // Verificamos si es una letra A-Z o Ñ
     if (word.match(/^[A-ZÑ]$/)) {
       this.guess(word);
-      something= document.getElementById("o2");
-      something.write('');
     }
   }
 

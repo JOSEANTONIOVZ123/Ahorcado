@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,11 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     AhorcadoComponent,
     CommonModule,
+    HttpClientModule,
+
   ],
 
-  providers: [CommonModule],
+  providers: [CommonModule, provideHttpClient(),ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
